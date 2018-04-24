@@ -4,6 +4,7 @@
 [image2]: ./misc/warpandmask.png
 [image3]: ./misc/rock1.png
 [image4]: ./misc/rock2.png
+[image5]: ./misc/coordinateTransform.png
 
 ## Project: Search and Sample Return
 ### Andrew Eulberg
@@ -49,6 +50,9 @@ You're reading it!
 #### 3. Find Rocks
 ![alt text][image3]
 ![alt text][image4]
+
+#### 4. Coordinate Transformations
+![alt text][image5]
 
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 And another! 
