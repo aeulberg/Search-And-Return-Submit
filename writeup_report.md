@@ -50,10 +50,12 @@ The mask is also edited to restrict the angle of the cone seen by the camera on 
 Since I was editing the boundries of the mask, my mask image is created first full of zeros based on the original image dimensions and then populated with ones based on the targeted effect.  The example from the walkthrough did not need to adjust anything so their mask image was just created full of ones.
 #### 2. Threshholding image
 The threshholding method was also discussed in class, where an identically size image is created by comparing every pixel and highlighting every pixel that had a color in all 3 channels greater then 160 (out of 255).  After some manipulation I felt the green channel needed to be increased to 170.  The image below is the threshheld version to the left image from the previous section.
+
 ![alt text][image1]
 
 #### 3. Finding Rocks
 Finding rocks was important for picking out the special rocks on the camera image and was handled by the function `find rocks()`.  The function was based off the threshhold function (`color_thresh()`) with minor modifications the would look for a specified range of colors in each color channel of an image.  The specifics wond up being red greater then 100, green greater then 105 and blue less then 90.  These values were found by observing the images below until on other objects appeared on the right image below and the the rock its self was mostly solid.  The images below show a rock on normal terrain.
+
 ![alt text][image3]
 
 The image below was the second test case to ensure that the ranges did not include any terrain as rocks.
