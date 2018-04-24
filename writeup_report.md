@@ -83,10 +83,11 @@ The 3 maps: the obstructed,rock, and navigatable(the half masked), are then conv
 # add info here
 
 #### 2. `decision_step()`
+The example `decision_step()` functioned by turning the rover toward the most navigatable terrain, making a zero point turn in instances of no more navigatable terrain.  While crude, it could be used to navigate the surface in a relatively reliable fashion and overall was copied with few modifications.  The code was tested with alter steer angle limits and varying speeds but in evitably all values were reduced to default to produce a reliable code.  The only modification was that all rover nav angles were reduced by 0.1 to induce an counter to straight line motion.  This served several purposes, first it favored motion along the right side of the rover which prevented cases where a rover would get trapped in large open spaces driving in endless circles.  The second was to oscillate while traveling through straight sections of maps which varied the aproach of trouble sections of the map, which meant if the rover got turned around in a previously explored section of map it would be less likely to make the same mistake again and again. 
 
-#### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
-**Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
+#### 2. Autonomous mode 
+The target specification of the mission was the complete more then 40% of the map with more then 60% fidelity.  The code discribed above would reliable map more then 40% at about 80% fidelity at 23 to 30 frames per sec when simulated at a resolution of 1280x1024.  The actual map percentage varied through the trials due to perception
 
 1280 x 1024 FPS 23-30
 
