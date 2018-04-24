@@ -1,9 +1,9 @@
 [//]: # (Image References)
 [image0]: ./misc/rover_image.jpg
-[image1]: ./misc/Threshed.jpg
-[image2]: ./misc/warpandmask.jpg
-[image3]: ./misc/rock1.jpg
-[image4]: ./misc/rock2.jpg
+[image1]: ./misc/Threshed.png
+[image2]: ./misc/warpandmask.png
+[image3]: ./misc/rock1.png
+[image4]: ./misc/rock2.png
 
 ## Project: Search and Sample Return
 ### Andrew Eulberg
@@ -41,7 +41,7 @@ You're reading it!
 
 ### Notebook Analysis
 #### 1. Prespective Transform
-![alt text][image3]
+![alt text][image2]
 
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 And another! 
