@@ -42,6 +42,7 @@ You're reading it!
 
 ### Notebook Analysis
 #### 1. Prespective Transform
+The prespective transform was given in class along with the source and destination coordinates.  I made modifications to it after seeing a mask returned in the project walkthrough video so mine now produces a mask with the warped image.  The masks purposes is to prevent the pixels lost from the transformation counting as objects (obstacles,rocks).  The lost pixels can be observed in black on the left image below and also black on the mask to the right. 
 ![alt text][image2]
 
 #### 2. Threshholding image
