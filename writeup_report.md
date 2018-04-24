@@ -1,6 +1,6 @@
 [//]: # (Image References)
 [image0]: ./misc/rover_image.jpg
-[image1]: ./misc/Threshed.png
+[image1]: ./misc/Threshed1.png
 [image2]: ./misc/warpandmask.png
 [image3]: ./misc/rock1.png
 [image4]: ./misc/rock2.png
@@ -43,10 +43,16 @@ You're reading it!
 #### 1. Prespective Transform
 ![alt text][image2]
 
+#### 2. Threshholding image
+![alt text][image1]
+
+#### 3. Find Rocks
+![alt text][image3]
+![alt text][image4]
+
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 And another! 
 
-![alt text][image2]
 
 ### Autonomous Navigation and Mapping
 
@@ -61,4 +67,4 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 
 
 
-![alt text][image3]
+
