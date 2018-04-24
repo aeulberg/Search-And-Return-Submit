@@ -126,7 +126,7 @@ def perception_step(Rover):
     warped,mask=perspect_transform(image,source,destination)
     #creates a half mask to reduce false entries into map
     half_mask=mask.copy()
-    half_mask[:95,:]=0
+    half_mask[:90,:]=0
     # 3) Apply color threshold to identify navigable terrain/obstacles/rock samples
     #vision threshed - unedited thresh image for vision image
     threshed=color_thresh(warped)*mask
