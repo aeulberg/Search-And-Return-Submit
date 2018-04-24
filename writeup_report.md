@@ -65,18 +65,26 @@ The image below was the second test case to ensure that the ranges did not inclu
 The coordinate transforms were discussed inclass and included in the notebook for testing.  The image below shows the camera image(upper left), the transformed version of it(upper right),the threshheld verion(lower left) and the calculated coordinate graph(lower right).  The threshed image is converted to x and y coordinates and then an arrow is super imposed to show the mean direction of the same points in polar form.
 ![alt text][image5]
 
-#### 5. `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
-And another! 
+#### 5. `process_image()` function 
+The `process_image()` function applied all the previous functions and then applied the findings of the camera to the rover map.  This function worked by taking in an image, warping it using  `prespect_transfrom()` and evaluating it for navigatable terrain, rocks and obstructed terrain.  Navigatable terrain, obsticale, and rock data were all stored in maps that were converted to coordinates, then to world coordinates and then imposed on to a map of the terrain using different colors to represent each object.  The camera image, the warped image and the map were then combined into a single image.  The function was tested by feeding recorded rover stills and then combining the output of each still into a video.  
 
 
 ### Autonomous Navigation and Mapping
 
 #### 1. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
 
+#### 1. `perception_step()`
+Everything the rover sees in interpreted in `perception_step()` but it functions simularly to `process_image()` from the notebook. It starts by establishing the source and destination pixels needed for `prespect_transfrom()` allong with a few other variables found by experimenting in the jupyter notebook. The incoming image is transformed using `prespect_transfrom()` and the mask created by my modified `prespect_transfrom()` then copied to a variable called `half_mask` which is the half of the mask closes to the orgin, ie the camera.  This is done for fidelity reasons because when the camera image is warped, pixels that correspond to objects farther away are esentually stretched out over an area.  This means the a small number of pixels are used to determine the navigatablity of an area which is not very accurate.  By masking these stretched pixels, the mapped data is more accurate.  
+
+The warped image is then inspected for rocks using `find_rocks()` and threshed to determin unobstructed terrain using `color_thresh()` which is used to determine the obstructed terrain. This is done by multiplying the negative of the threshed image with the "full" mask. The threshed data is then copied into two seperate images and then multiplied both the full mask and the half mask while the rock data is multiplied by the half mask.
+
+#### 2. `decision_step()`
 
 #### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
 **Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
+
+1280 x 1024 FPS 23-30
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
